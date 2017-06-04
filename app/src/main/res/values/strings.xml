@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Solar System Quiz</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_in_solar_system_quiz">Welcome in Solar System Quiz!</string>
+    <string name="challenge_your_knowledge_about_solar_system">Challenge Your knowledge about Solar System</string>
+    <string name="put_your_name_here">Put Your name here</string>
+    <string name="start">Start</string>
+    <string name="question">Question:</string>
+    <string name="answer">Answer</string>
+    <string name="you_answered_correctly_on">You answered correctly on :</string>
+    <string name="of_asked_questions">of asked questions.</string>
+    <string name="write_answer_here">Write answer here</string>
+</resources>
