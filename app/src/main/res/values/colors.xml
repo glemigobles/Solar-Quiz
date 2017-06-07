@@ -7,5 +7,6 @@
     <color name="colorPrimaryGrey">#505050</color>
     <color name="colorDarkGrey">#25221C</color>
     <color name="colorPrimaryViol">#7356BF</color>
+    <color name="colorPrimaryRed">#ff0011</color>
 
 </resources>
