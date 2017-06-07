@@ -64,10 +64,6 @@ public class VariableContainer {
         this.currentQuestionText = currentQuestionText;
     }
 
-    public boolean isQuestionChecked() {
-        return questionChecked;
-    }
-
     public void setQuestionChecked(boolean questionChecked) {
         this.questionChecked = questionChecked;
     }

@@ -14,6 +14,9 @@ public class FinalScore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_score);
 
+        TextView name = (TextView) findViewById(R.id.playerName);
+        name.setText(MainMenu.variables.getPlayerName()+"!");
+
         TextView score = (TextView) findViewById(R.id.score);
         score.setText("" + MainMenu.variables.points);
 
@@ -21,6 +24,8 @@ public class FinalScore extends AppCompatActivity {
         scorePercent.setText(MainMenu.variables.setScorePercent() + " %");
 
         TextView congrats = (TextView) findViewById(R.id.congrats);
+
+        MainMenu.variables.getCurrentQuestion();
 
         if (MainMenu.variables.setScorePercent() > 50) {
             congrats.setText("Congratulation! your score is :");

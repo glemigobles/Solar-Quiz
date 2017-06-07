@@ -20,6 +20,18 @@
             android:background="@color/colorPrimary"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/playerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:layout_margin="20dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorAccentLight"
+                android:gravity="center"
+                />
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
