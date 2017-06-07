@@ -52,8 +52,6 @@ public class Quiz extends AppCompatActivity {
         }
         if (MainMenu.variables.getCurrentQuestion() % 3 == 0 || MainMenu.variables.getCurrentQuestion() == 3) {
             setContentView(R.layout.activity_quiz_write_down);
-
-            final EditText editText = (EditText) findViewById(R.id.writeDown);
         }
 
 
@@ -65,7 +63,6 @@ public class Quiz extends AppCompatActivity {
         questionText.setText(MainMenu.variables.getCurrentQuestionText());
         final TextView numberOfQuestions = (TextView) findViewById(R.id.numberOfQuestions);
         numberOfQuestions.setText("/  " + MainMenu.questions.size());
-        final TextView quesString = (TextView) findViewById(R.id.questionstring);
 
         // Setting "answer" button logic
         final Button nextRound = (Button) findViewById(R.id.nextRound);
