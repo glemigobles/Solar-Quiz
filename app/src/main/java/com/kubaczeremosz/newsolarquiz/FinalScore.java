@@ -14,22 +14,26 @@ public class FinalScore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_score);
 
+        int numberOfQuestions=getIntent().getIntExtra("QUESTIONS", MainMenu.questions.size());
+        int points = getIntent().getIntExtra("POINTS", MainMenu.variables.points);
+        String playerName= getIntent().getStringExtra("NAME");
+
         TextView name = (TextView) findViewById(R.id.playerName);
-        name.setText(MainMenu.variables.getPlayerName()+"!");
+        name.setText(playerName+"!");
 
         TextView score = (TextView) findViewById(R.id.score);
-        score.setText("" + MainMenu.variables.points);
+        score.setText("" + points);
 
         TextView scorePercent = (TextView) findViewById(R.id.scorePercent);
-        scorePercent.setText(MainMenu.variables.setScorePercent() + " %");
+        scorePercent.setText(setScorePercent(points,numberOfQuestions) + " %");
 
         TextView congrats = (TextView) findViewById(R.id.congrats);
 
         MainMenu.variables.getCurrentQuestion();
 
-        if (MainMenu.variables.setScorePercent() > 50) {
+        if (setScorePercent(points,numberOfQuestions) > 50) {
             congrats.setText("Congratulation! your score is :");
-            if (MainMenu.variables.setScorePercent() == 100) {
+            if (setScorePercent(points,numberOfQuestions) == 100) {
                 congrats.setText("Perfect!!! your score is :");
             }
         } else {
@@ -54,5 +58,13 @@ public class FinalScore extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public int setScorePercent(int points, int questionsNumber) {
+        if (questionsNumber != 0) {
+            double score = ((double) points / (double) questionsNumber) * 100;
+            return (int) score;
+        } else {
+            return 0;
+        }
     }
 }

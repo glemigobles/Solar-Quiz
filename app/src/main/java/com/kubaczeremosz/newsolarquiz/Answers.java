@@ -16,7 +16,6 @@ public class Answers {
     String PlayerAnswer2;
     String PlayerAnswer3;
 
-
     ArrayList<String> answerList = new ArrayList<>();
 
     //3 types of constructors of Answer object
@@ -53,6 +52,4 @@ public class Answers {
         answerList.add(4, this.Answer5);
         answerList.add(5, this.Answer6);
     }
-
-
 }

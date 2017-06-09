@@ -1,7 +1,6 @@
 package com.kubaczeremosz.newsolarquiz;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,9 +53,8 @@ public class Quiz extends AppCompatActivity {
             setContentView(R.layout.activity_quiz_write_down);
         }
 
-
-        MainMenu.variables.setCurrentQuestionText(MainMenu.questions.get(currentQuestion - 1));
         //Setting current question
+        MainMenu.variables.setCurrentQuestionText(MainMenu.questions.get(currentQuestion - 1));
         final TextView questionNumber = (TextView) findViewById(R.id.questionNumber);
         questionNumber.setText("" + currentQuestion);
         final TextView questionText = (TextView) findViewById(R.id.questionTXT);
@@ -76,12 +74,16 @@ public class Quiz extends AppCompatActivity {
                 if (MainMenu.variables.questionChecked) {
                     if (currentQuestion == MainMenu.questions.size()) {
                                 Intent intent = new Intent(Quiz.this, FinalScore.class);
+                                intent.putExtra("POINTS",MainMenu.variables.points);
+                                intent.putExtra("NAME",MainMenu.variables.getPlayerName());
+                                intent.putExtra("QUESTIONS",MainMenu.questions.size());
                                 startActivity(intent);
-                            }
                     }
-                MainMenu.variables.setCurrentQuestion(currentQuestion + 1);
-                Intent intent = new Intent(Quiz.this, Quiz.class);
-                startActivity(intent);
+                    MainMenu.variables.setCurrentQuestion(currentQuestion + 1);
+                    Intent intent = new Intent(Quiz.this, Quiz.class);
+                    startActivity(intent);
+                }
+
             }
         });
     }
